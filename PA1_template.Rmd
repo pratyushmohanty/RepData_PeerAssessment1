@@ -26,11 +26,11 @@ str(data)
 
 1. Calculate the total number of steps taken per day
 
-```{r load dplyr, message=FALSE}
+```{r load_dplyr, message=FALSE}
 library(dplyr)
 ```
 
-```{r total steps per day, echo=TRUE}
+```{r total_steps_per_day, echo=TRUE}
 total_steps_per_day <- 
         as.data.frame(data %>% 
                               group_by(date) %>% 
@@ -44,7 +44,7 @@ head(total_steps_per_day, n=5)
 
 2. If you do not understand the difference between a histogram and a barplot, research the difference between them. Make a histogram of the total number of steps taken each day
 
-```{r histogram, echo=TRUE}
+```{r histogram_total_steps_per_day, echo=TRUE}
 hist(total_steps_per_day$totalSteps, 
      breaks = 10,
      col="red", 
@@ -65,7 +65,7 @@ summary(total_steps_per_day$totalSteps)
 
 First, group the data by interval and calulate the mean steps.
 
-```{r Group by interval, echo=TRUE}
+```{r Group_by_interval, echo=TRUE}
 
 time_series_data <- 
         as.data.frame(
@@ -79,7 +79,7 @@ head(time_series_data, n=5)
 
 Time Series plot -
 
-``` {r, echo=TRUE}
+``` {r Mean_Steps_Per_Interval, echo=TRUE}
 plot(time_series_data$interval, time_series_data$meanSteps, 
      type = "l",
      main = "Mean steps per interval",
@@ -152,7 +152,7 @@ sum(is.na(data_with_nas_fixed))
 
 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
-```{r total steps per day(no NAs), echo=TRUE}
+```{r total_steps_per_day_no_NAs, echo=TRUE}
 total_steps_per_day <- 
         as.data.frame(data_with_nas_fixed %>% 
                               group_by(date) %>% 
@@ -161,7 +161,7 @@ total_steps_per_day <-
 
 ```
 
-```{r histogram (no NAs), echo=TRUE}
+```{r histogram_steps_per_day_no_NAs, echo=TRUE}
 hist(total_steps_per_day$totalSteps, 
      breaks = 10,
      col="red", 
@@ -184,7 +184,7 @@ The Means and Medians dont seem to differ a lot.
 1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.  
 
 New variable *dayType*
-```{r new variable dayType, echo=TRUE}
+```{r new_variable_dayType, echo=TRUE}
 data$dayType <- ifelse(weekdays(data$date) %in% c("Saturday", "Sunday"), "weekend", "weekday" )
 data$dayType <- as.factor(data$dayType)
 
@@ -193,11 +193,11 @@ data$dayType <- as.factor(data$dayType)
 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).  
 
 
-```{r load lattice, message=FALSE}
+```{r load_lattice, message=FALSE}
 library(lattice)
 ```
 
-```{r panel plot, echo=TRUE}
+```{r panel_plot, echo=TRUE}
 
 timeseries_data_by_dayType <- 
         as.data.frame(

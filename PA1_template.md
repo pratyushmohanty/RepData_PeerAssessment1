@@ -84,7 +84,7 @@ hist(total_steps_per_day$totalSteps,
 rug(total_steps_per_day$totalSteps)
 ```
 
-![](PA1_template_files/figure-html/histogram-1.png)<!-- -->
+![](PA1_template_files/figure-html/histogram_total_steps_per_day-1.png)<!-- -->
 
 3. Calculate and report the mean and median of the total number of steps taken per day
 
@@ -137,7 +137,7 @@ plot(time_series_data$interval, time_series_data$meanSteps,
      )
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](PA1_template_files/figure-html/Mean_Steps_Per_Interval-1.png)<!-- -->
 
 
 
@@ -246,7 +246,7 @@ hist(total_steps_per_day$totalSteps,
 rug(total_steps_per_day$totalSteps)
 ```
 
-![](PA1_template_files/figure-html/histogram (no NAs)-1.png)<!-- -->
+![](PA1_template_files/figure-html/histogram_steps_per_day_no_NAs-1.png)<!-- -->
 
 Mean and Median of total steps
 
@@ -301,4 +301,4 @@ with(timeseries_data_by_dayType, {
 }) 
 ```
 
-![](PA1_template_files/figure-html/panel plot-1.png)<!-- -->
+![](PA1_template_files/figure-html/panel_plot-1.png)<!-- -->
